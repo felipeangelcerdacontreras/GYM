@@ -19,7 +19,7 @@ $aPermisos = empty($oUsuario->perfiles_id) ? array() : explode("@", $oUsuario->p
     });
 </script>
 <!-- Sidebar -->
-<ul class="navbar-nav bg-gradient-danger sidebar sidebar-dark accordion" id="accordionSidebar">
+<ul class="navbar-nav bg-gradient-info sidebar sidebar-dark accordion" id="accordionSidebar">
 
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php?action=bienvenida">
@@ -47,41 +47,11 @@ $aPermisos = empty($oUsuario->perfiles_id) ? array() : explode("@", $oUsuario->p
                 <?php if ($oUsuario->ExistePermiso("usuarios", $aPermisos) === true) { ?>
                     <a class='collapse-item' href='index.php?action=usuarios'>Usuarios</a>
                 <?php } ?>
-                <?php if ($oUsuario->ExistePermiso("choferes", $aPermisos) === true) { ?>
-                    <a class='collapse-item' href='index.php?action=choferes'>Choferes</a>
-                <?php } ?>
-                <?php if ($oUsuario->ExistePermiso("contenedores", $aPermisos) === true) { ?>
-                    <a class='collapse-item' href='index.php?action=contenedores'>Contenedores</a>
-                <?php } ?>
-                <?php if ($oUsuario->ExistePermiso("vehiculos", $aPermisos) === true) { ?>
-                    <a class='collapse-item' href='index.php?action=vehiculos'>Vehiculos</a>
-                <?php } ?>
-                <?php if ($oUsuario->ExistePermiso("departamentos", $aPermisos) === true) { ?>
-                    <a class='collapse-item' href='index.php?action=departamentos'>Departamentos</a>
-                <?php } ?>
-                <?php if ($oUsuario->ExistePermiso("puestos", $aPermisos) === true) { ?>
-                    <a class='collapse-item' href='index.php?action=puestos'>Puestos</a>
-                <?php } ?>
                 <?php if ($oUsuario->ExistePermiso("horarios", $aPermisos) === true) { ?>
                     <a class='collapse-item' href='index.php?action=horarios'>Horarios</a>
                 <?php } ?>
-                <?php if ($oUsuario->ExistePermiso("horas", $aPermisos) === true) { ?>
-                    <a class='collapse-item' href='index.php?action=horas'>Horas extras</a>
-                <?php } ?>
-                <?php if ($oUsuario->ExistePermiso("empleados", $aPermisos) === true) { ?>
-                    <a class='collapse-item' id="empleados">Empleados</a>
-                <?php } ?>
-                <?php if ($oUsuario->ExistePermiso("festivos", $aPermisos) === true) { ?>
-                    <a class='collapse-item' href='index.php?action=festivos'>Festivos</a>
-                <?php } ?>
-                <?php if ($oUsuario->ExistePermiso("proveedores", $aPermisos) === true) { ?>
-                    <a class='collapse-item' href='index.php?action=proveedores'>Proveedores</a>
-                <?php } ?>
-                <?php if ($oUsuario->ExistePermiso("materiales", $aPermisos) === true) { ?>
-                    <a class='collapse-item' href='index.php?action=materiales'>Materiales</a>
-                <?php } ?>
-                <?php if ($oUsuario->ExistePermiso("ubicacion_checador", $aPermisos) === true) { ?>
-                    <a class='collapse-item' href='index.php?action=ubicacion_checador'>Ubicación Checador</a>
+                <?php if ($oUsuario->ExistePermiso("clientes", $aPermisos) === true) { ?>
+                    <a class='collapse-item' href='index.php?action=clientes'>Clientes</a>
                 <?php } ?>
             </div>
         </div>
@@ -97,53 +67,9 @@ $aPermisos = empty($oUsuario->perfiles_id) ? array() : explode("@", $oUsuario->p
         </a>
         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <?php if ($oUsuario->ExistePermiso("nominas_fiscal", $aPermisos) === true) { ?>
-                    <a class='collapse-item' href='index.php?action=nominas_fiscal'>Nominas Fiscal</a>
-                <?php } ?>
-                <?php if ($oUsuario->ExistePermiso("nominas", $aPermisos) === true) { ?>
-                    <a class='collapse-item' href='index.php?action=nominas'>Nominas</a>
-                <?php } ?>
+               
                 <?php if ($oUsuario->ExistePermiso("asistencia", $aPermisos) === true) { ?>
                     <a class='collapse-item' href='index.php?action=asistencia'>Asistencia</a>
-                <?php } ?>
-                <?php if ($oUsuario->ExistePermiso("permisos", $aPermisos) === true) { ?>
-                    <a class='collapse-item' href='index.php?action=permisos'>Permisos</a>
-                <?php } ?>
-                <?php if ($oUsuario->ExistePermiso("ahorros", $aPermisos) === true) { ?>
-                    <a class='collapse-item' href='index.php?action=ahorros'>Ahorros</a>
-                <?php } ?>
-                <?php if ($oUsuario->ExistePermiso("aguinaldo", $aPermisos) === true) { ?>
-                    <a class='collapse-item' href='index.php?action=aguinaldo'>Aguinaldos</a>
-                <?php } ?>
-                <?php if ($oUsuario->ExistePermiso("prestamos", $aPermisos) === true) { ?>
-                    <a class='collapse-item' href='index.php?action=prestamos'>Prestamos</a>
-                <?php } ?>
-                <?php if ($oUsuario->ExistePermiso("otros", $aPermisos) === true) { ?>
-                    <a class='collapse-item' href='index.php?action=otros'>Otros Cargos</a>
-                <?php } ?>
-                <?php if ($oUsuario->ExistePermiso("fonacot", $aPermisos) === true) { ?>
-                    <a class='collapse-item' href='index.php?action=fonacot'>Fonacot</a>
-                <?php } ?>
-                <?php if ($oUsuario->ExistePermiso("infonavit", $aPermisos) === true) { ?>
-                    <a class='collapse-item' href='index.php?action=infonavit'>Infonavit</a>
-                <?php } ?>
-                <?php if ($oUsuario->ExistePermiso("vacaciones", $aPermisos) === true) { ?>
-                    <a class='collapse-item' href='index.php?action=vacaciones'>Vacaciones</a>
-                <?php } ?>
-                <?php if ($oUsuario->ExistePermiso("incapacidades", $aPermisos) === true) { ?>
-                    <a class='collapse-item' href='index.php?action=incapacidades'>Incapacidades</a>
-                <?php } ?>
-                <?php if ($oUsuario->ExistePermiso("recoleccion", $aPermisos) === true) { ?>
-                    <a class='collapse-item' href='index.php?action=recoleccion'>Recolección</a>
-                <?php } ?>
-                <?php if ($oUsuario->ExistePermiso("embarque", $aPermisos) === true) { ?>
-                    <a class='collapse-item' href='index.php?action=embarque'>Embarque y venta</a>
-                <?php } ?>
-                <?php if ($oUsuario->ExistePermiso("servicio", $aPermisos) === true) { ?>
-                    <a class='collapse-item' href='index.php?action=servicio'>Servicio</a>
-                <?php } ?>
-                <?php if ($oUsuario->ExistePermiso("nomina_comedor", $aPermisos) === true) { ?>
-                    <a class='collapse-item' href='index.php?action=nomina_comedor'>Comedor</a>
                 <?php } ?>
             </div>
         </div>

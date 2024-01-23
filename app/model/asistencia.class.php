@@ -51,11 +51,7 @@ class asistencia extends AW
     {
         $sqlEmpleado = "";
         if (!empty($this->id_empleado)) {
-            if (!empty($this->id_departamento) && $this->id_departamento >= 1) {
-                $sqlEmpleado = " and d.id_departamento = '{$this->id_departamento}' order by a.fecha asc";
-            } else {
-                $sqlEmpleado = " order by a.fecha asc";
-            }
+            $sqlEmpleado = " order by a.fecha asc";
         } else {
             $sqlEmpleado = "order by a.order desc limit 5";
         }
@@ -67,17 +63,9 @@ class asistencia extends AW
             IF(a.dia = 3,'Miercoles',
             IF(a.dia = 4,'Jueves',
             IF(a.dia = 5,'Viernes',
-            IF(a.dia = 6, 'Sabado', ''))))))) AS dia,
-            c.tiempo_tolerancia,
-            IF(estatus_entrada = 1,'A tiempo', 
-            if(estatus_entrada = 2, 'Retraso', 
-            if(estatus_entrada = 3, 'Falta', ''))) AS retraso,
-            if(permiso_entrada = 1, 'Permiso entrada', if(permiso_salida = 1, 'Permiso salida', '')) as permiso,
-            d.id_departamento
+            IF(a.dia = 6, 'Sabado', ''))))))) AS dia
             FROM asistencia as a 
-            left join empleados as b on b.id = a.id_empleado
-            left join horarios as c on c.id = b.id_horario
-            left join puestos as d on d.id = b.id_puesto
+            left join clientes as b on b.id = a.id_cliente
             where 1=1 and fecha between '{$this->fecha_inicial}' and '{$this->fecha_final}' {$sqlEmpleado} ";
         return $this->Query($sql);
     }

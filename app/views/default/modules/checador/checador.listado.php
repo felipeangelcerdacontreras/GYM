@@ -27,7 +27,7 @@ $lstasistencia = $oAsistencia->Listado_asistencia();
         $("#btnAgregar").button().click(function(e) {
             Editar("", "Agregar");
         });
-        $(".buttons-html5 ").addClass("btn btn-outline-danger");
+        $(".buttons-html5 ").addClass("btn btn-outline-info");
 
         $("#frmFormulario").ajaxForm({
             success: function(data) {
@@ -53,13 +53,13 @@ $lstasistencia = $oAsistencia->Listado_asistencia();
     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
         <thead>
             <tr>
-                <th>Empleado</th>
+                <th>Cliente</th>
                 <th>Entrada</th>
                 <th>Salida</th>
             </tr>
         </thead>
         <tfoot>
-            <th>Empleado</th>
+            <th>Cliente</th>
             <th>Entrada</th>
             <th>Salida</th>
         </tfoot>

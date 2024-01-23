@@ -67,68 +67,27 @@ $aPermisos = empty($oUsuarios->perfiles_id) ? array() : explode("@", $oUsuarios-
                     </div>
                 </div>
             </div>
-            <div class="col">
-                <div class="form-group">
-                    <strong class="">N° Económico:</strong>
-                    <div class="form-group">
-                        <input type="text" description="" aria-describedby="" id="numero_economico" required name="numero_economico" value="<?= $oUsuarios->numero_economico ?>" class="form-control" />
-                    </div>
-                </div>
-            </div>
         </div>
         <div class="form-group">
             <strong class="">Permisos </strong>
             <div class="row">
                 <div class="col">
-                    <strong class="">Administrador: </strong><br>
-                    <strong class="">Modulos: </strong><br>
-                    <input type="checkbox" name="perfiles_id[]" value="recoleccion" <?php if ($oUsuarios->ExistePermiso("recoleccion", $aPermisos) === true) echo "checked" ?>><strong> Recolección</strong><br>
-                    <input type="checkbox" name="perfiles_id[]" value="embarque" <?php if ($oUsuarios->ExistePermiso("embarque", $aPermisos) === true) echo "checked" ?>><strong> Embarque y venta(En construccion)</strong><br>
-                    <input type="checkbox" name="perfiles_id[]" value="servicio" <?php if ($oUsuarios->ExistePermiso("servicio", $aPermisos) === true) echo "checked" ?>><strong> Servicio(En construccion)</strong><br>
-                    <strong class="">Catalogos: </strong><br>
+                    <strong class="">Modulos </strong><br>
                     <input type="checkbox" name="perfiles_id[]" value="usuarios" <?php if ($oUsuarios->ExistePermiso("usuarios", $aPermisos) === true) echo "checked" ?>><strong> Usuarios</strong><br>
-                    <input type="checkbox" name="perfiles_id[]" value="materiales" <?php if ($oUsuarios->ExistePermiso("materiales", $aPermisos) === true) echo "checked" ?>><strong> Materiales</strong><br>
-                    <input type="checkbox" name="perfiles_id[]" value="choferes" <?php if ($oUsuarios->ExistePermiso("choferes", $aPermisos) === true) echo "checked" ?>><strong> Choferes</strong><br />
-                    <input type="checkbox" name="perfiles_id[]" value="contenedores" <?php if ($oUsuarios->ExistePermiso("contenedores", $aPermisos) === true) echo "checked" ?>><strong> Contenedores</strong><br />
-                    <input type="checkbox" name="perfiles_id[]" value="vehiculos" <?php if ($oUsuarios->ExistePermiso("vehiculos", $aPermisos) === true) echo "checked" ?>><strong> Vehiculos</strong><br />
-                    <input type="checkbox" name="perfiles_id[]" value="proveedores" <?php if ($oUsuarios->ExistePermiso("proveedores", $aPermisos) === true) echo "checked" ?>><strong> Proveedores</strong><br />
-                </div>
-                <div class="col">
-                    <strong class="">Recursos Humanos: </strong><br>
-                    <strong class="">Modulos: </strong><br>
-                    <input type="checkbox" name="perfiles_id[]" value="ahorros" <?php if ($oUsuarios->ExistePermiso("ahorros", $aPermisos) === true) echo "checked" ?>><strong> Ahorros</strong><br />
-                    <input type="checkbox" name="perfiles_id[]" value="aguinaldo" <?php if ($oUsuarios->ExistePermiso("aguinaldo", $aPermisos) === true) echo "checked" ?>><strong> Aguinaldos</strong><br />
-                    <input type="checkbox" name="perfiles_id[]" value="prestamos" <?php if ($oUsuarios->ExistePermiso("prestamos", $aPermisos) === true) echo "checked" ?>><strong> Prestamos</strong><br />
-                    <input type="checkbox" name="perfiles_id[]" value="otros" <?php if ($oUsuarios->ExistePermiso("otros", $aPermisos) === true) echo "checked" ?>><strong> Otros Cargos</strong><br />
-                    <input type="checkbox" name="perfiles_id[]" value="nomina_comedor" <?php if ($oUsuarios->ExistePermiso("nomina_comedor", $aPermisos) === true) echo "checked" ?>><strong> Comedor</strong><br />
-                    <input type="checkbox" name="perfiles_id[]" value="fonacot" <?php if ($oUsuarios->ExistePermiso("fonacot", $aPermisos) === true) echo "checked" ?>><strong> Fonacot</strong><br />
-                    <input type="checkbox" name="perfiles_id[]" value="infonavit" <?php if ($oUsuarios->ExistePermiso("infonavit", $aPermisos) === true) echo "checked" ?>><strong> Infonavit</strong><br />
-                    <input type="checkbox" name="perfiles_id[]" value="vacaciones" <?php if ($oUsuarios->ExistePermiso("vacaciones", $aPermisos) === true) echo "checked" ?>><strong> Vacaciones</strong><br />
-                    <input type="checkbox" name="perfiles_id[]" value="incapacidades" <?php if ($oUsuarios->ExistePermiso("incapacidades", $aPermisos) === true) echo "checked" ?>><strong> Incapacidades</strong><br />
-                    <input type="checkbox" name="perfiles_id[]" value="ubicacion_checador" <?php if ($oUsuarios->ExistePermiso("ubicacion_checador", $aPermisos) === true) echo "checked" ?>><strong> Ubicación Checador</strong><br />
-                    <strong class="">Catalogos: </strong><br>
-                    <input type="checkbox" name="perfiles_id[]" value="departamentos" <?php if ($oUsuarios->ExistePermiso("departamentos", $aPermisos) === true) echo "checked" ?>><strong> Departamentos</strong><br />
-                    <input type="checkbox" name="perfiles_id[]" value="puestos" <?php if ($oUsuarios->ExistePermiso("puestos", $aPermisos) === true) echo "checked" ?>><strong> Puestos</strong><br />
-                    <input type="checkbox" name="perfiles_id[]" value="empleados" <?php if ($oUsuarios->ExistePermiso("empleados", $aPermisos) === true) echo "checked" ?>><strong> Empleados</strong><br />
-                    <input type="checkbox" name="perfiles_id[]" value="horas" <?php if ($oUsuarios->ExistePermiso("horas", $aPermisos) === true) echo "checked" ?>><strong> Horas extras</strong><br />
+                    <input type="checkbox" name="perfiles_id[]" value="notificaciones" <?php if ($oUsuarios->ExistePermiso("notificaciones", $aPermisos) === true) echo "checked" ?>><strong> Notificaciones</strong><br>
+                    <input type="checkbox" name="perfiles_id[]" value="clientes" <?php if ($oUsuarios->ExistePermiso("clientes", $aPermisos) === true) echo "checked" ?>><strong> Clientes</strong><br />
                     <input type="checkbox" name="perfiles_id[]" value="horarios" <?php if ($oUsuarios->ExistePermiso("horarios", $aPermisos) === true) echo "checked" ?>><strong> Horarios</strong><br />
-                    <input type="checkbox" name="perfiles_id[]" value="nominas_fiscal" <?php if ($oUsuarios->ExistePermiso("nominas_fiscal", $aPermisos) === true) echo "checked" ?>><strong> Nominas Fiscal</strong><br />
-                    <input type="checkbox" name="perfiles_id[]" value="nominas" <?php if ($oUsuarios->ExistePermiso("nominas", $aPermisos) === true) echo "checked" ?>><strong> Nominas</strong><br />
                     <input type="checkbox" name="perfiles_id[]" value="asistencia" <?php if ($oUsuarios->ExistePermiso("asistencia", $aPermisos) === true) echo "checked" ?>><strong> Asistencia</strong><br />
-                    <input type="checkbox" name="perfiles_id[]" value="permisos" <?php if ($oUsuarios->ExistePermiso("permisos", $aPermisos) === true) echo "checked" ?>><strong> Permisos</strong><br />
-                    <input type="checkbox" name="perfiles_id[]" value="festivos" <?php if ($oUsuarios->ExistePermiso("festivos", $aPermisos) === true) echo "checked" ?>><strong> Festivos</strong><br />
                 </div>
             </div>
         </div>
         <div class="form-group">
             <strong>Nivel del usuario</strong>
             <div class="form-group">
-                <select id="nvl_usuario" description="Seleccione el nivel del usuario" class="form-control obligado" name="nvl_usuario" >
+                <select id="nvl_usuario" description="Seleccione el nivel del usuario" class="form-control obligado" name="nvl_usuario">
                     <option value="">--SELECCIONE--</option>
-                    <option value="1" 
-                        <?php if ($oUsuarios->nvl_usuario == "1") echo "selected";?>>Administrador</option>
-                    <option value="2" 
-                       <?php if ($oUsuarios->nvl_usuario == "2") echo "selected";?>>Usuario</option>
+                    <option value="1" <?php if ($oUsuarios->nvl_usuario == "1") echo "selected"; ?>>Administrador</option>
+                    <option value="2" <?php if ($oUsuarios->nvl_usuario == "2") echo "selected"; ?>>Usuario</option>
                 </select>
             </div>
         </div>

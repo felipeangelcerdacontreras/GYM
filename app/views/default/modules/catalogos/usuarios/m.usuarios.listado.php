@@ -24,9 +24,9 @@ $lstUsuarios = $oUsuarios->Listado();
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
     <div class="card-header py-3" style="text-align:left">
-        <h5 class="m-0 font-weight-bold text-danger">Usuarios</h5>
+        <h5 class="m-0 font-weight-bold text-info">Usuarios</h5>
         <div class="form-group" style="text-align:right">
-            <input type="button" id="btnAgregar" class="btn btn-outline-danger" name="btnAgregar" value="Agregar nuevo" />
+            <input type="button" id="btnAgregar" class="btn btn-outline-info" name="btnAgregar" value="Agregar nuevo" />
         </div>
     </div>
     <div class="card-body">

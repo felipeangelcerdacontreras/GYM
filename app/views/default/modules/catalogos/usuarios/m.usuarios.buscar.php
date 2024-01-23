@@ -161,7 +161,7 @@ $lstUsuarios = $oUsuarios->Listado();
                         </div>
                         <div class="modal-footer">
 
-                            <input type="submit" class="btn btn-outline-danger" id="btnGuardar" value="Guardar">
+                            <input type="submit" class="btn btn-outline-info" id="btnGuardar" value="Guardar">
                             <button class="btn btn-outline-secondary" type="button" data-dismiss="modal">Cancel</button>
                         </div>
                     </div>

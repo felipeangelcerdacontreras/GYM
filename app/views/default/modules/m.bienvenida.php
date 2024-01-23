@@ -72,7 +72,7 @@ $(document).ready(function(e) {
                             <div class="card-body">
                                 <div class="text-center">
                                     <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 22rem;" src="app/views/default/img/icon.png" alt=""><br>
-                                    <strong>Somos una empresa familiar con poco mas de 14 años en el mercado del reciclaje. Pretendemos cada día con eficiencia, transparencia, productividad y calidad en el servicio generar en nuestros clientes y proveedores, confianza.</strong>
+                                    <strong></strong>
                                 </div>
                             </div>
                         </div>

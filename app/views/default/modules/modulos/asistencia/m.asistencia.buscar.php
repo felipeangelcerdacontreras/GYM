@@ -6,15 +6,10 @@ header("Acces-Control-Allow-Origin: *");
  */
 $_SITE_PATH = $_SERVER["DOCUMENT_ROOT"] . "/" . explode("/", $_SERVER["PHP_SELF"])[1] . "/";
 require_once($_SITE_PATH . "app/model/asistencia.class.php");
-require_once($_SITE_PATH . "app/model/departamentos.class.php");
 
 $oAsistencia = new asistencia();
 $sesion = $_SESSION[$oAsistencia->NombreSesion];
 $oAsistencia->ValidaNivelUsuario("asistencia");
-
-$oDepartamentos = new departamentos();
-$oDepartamentos->estatus = 1;
-$lstDepartamentos = $oDepartamentos->Listado();
 
 ?>
 <?php require_once('app/views/default/script_h.html'); ?>
@@ -239,26 +234,9 @@ $lstDepartamentos = $oDepartamentos->Listado();
                                     </div>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <strong class="">Departamento:</strong>
-                                <div class="form-group">
-                                    <select id="id_departamento" class="form-control" name="id_departamento">
-                                        <?php
-                                        if (count($lstDepartamentos) > 0) {
-                                            echo "<option value='0' >-- SELECCIONE --</option>\n";
-                                            foreach ($lstDepartamentos as $idx => $campo) {
-                                                echo "<option value='{$campo->id}' >" . $campo->nombre . "</option>\n";
-                                            }
-                                        }
-                                        ?>
-                                    </select>
-                                </div>
-                            </div>
                             <div class="row" style="float: right">
                             <a id='download'  ></a>
-                                <button class="btn btn-outline-secondary" tabindex="0" id="txt" type="button"><span>Extraer asistencia Microsip</span></button>&nbsp;
-                                <button class="btn btn-outline-success" tabindex="0" id="agregar" type="button"><span>Agregar asistencia</span></button>&nbsp;
-                                <button class="btn btn-outline-danger" tabindex="0" id="sincronizar" type="button"><span>Sincronizar Asistencia</span></button>
+                                <!--<button class="btn btn-outline-info" tabindex="0" id="sincronizar" type="button"><span>Sincronizar Asistencia</span></button>-->
                             </div>
                         </div>
                     </div>
@@ -284,7 +262,7 @@ $lstDepartamentos = $oDepartamentos->Listado();
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <input type="button" id="btnSincronizar" class="btn btn-outline-danger" name="btnSincronizar" value="Sincronizar">
+                            <input type="button" id="btnSincronizar" class="btn btn-outline-info" name="btnSincronizar" value="Sincronizar">
                             <button class="btn btn-outline-secondary" type="button" data-dismiss="modal">Cerrar</button>
                         </div>
                     </div>

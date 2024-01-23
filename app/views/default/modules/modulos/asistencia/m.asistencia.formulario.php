@@ -7,7 +7,7 @@ session_start();
 
 $_SITE_PATH = $_SERVER["DOCUMENT_ROOT"] . "/" . explode("/", $_SERVER["PHP_SELF"])[1] . "/";
 require_once($_SITE_PATH . "/app/model/asistencia.class.php");
-require_once($_SITE_PATH . "/app/model/empleados.class.php");
+require_once($_SITE_PATH . "/app/model/clientes.class.php");
 
 $oAsistencia = new asistencia();
 $oAsistencia->id = addslashes(filter_input(INPUT_POST, "id"));
@@ -15,8 +15,8 @@ $nombre = addslashes(filter_input(INPUT_POST, "nombre"));
 $sesion = $_SESSION[$oAsistencia->NombreSesion];
 $oAsistencia->Informacion();
 
-$oEmpleados = new empleados();
-$lstEmpleados = $oEmpleados->Listado();
+$oclientes = new clientes();
+$lstclientes = $oclientes->Listado();
 ?>
 <script type="text/javascript">
     $(document).ready(function(e) {

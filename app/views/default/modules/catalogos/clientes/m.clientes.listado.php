@@ -6,10 +6,10 @@
 session_start();
 
 $_SITE_PATH = $_SERVER["DOCUMENT_ROOT"] . "/" . explode("/", $_SERVER["PHP_SELF"])[1] . "/";
-require_once($_SITE_PATH . "/app/model/empleados.class.php");
+require_once($_SITE_PATH . "/app/model/clientes.class.php");
 
-$oEmpleados = new empleados();
-$lstempleados = $oEmpleados->Listado();
+$oClientes = new clientes();
+$lstclientes = $oClientes->Listado();
 ?>
 <script type="text/javascript">
     $(document).ready(function(e) {
@@ -24,9 +24,9 @@ $lstempleados = $oEmpleados->Listado();
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
     <div class="card-header py-3" style="text-align:left">
-        <h5 class="m-0 font-weight-bold text-danger">Empleados</h5>
+        <h5 class="m-0 font-weight-bold text-info">clientes</h5>
         <div class="form-group" style="text-align:right">
-            <input type="button" id="btnAgregar" class="btn btn-outline-danger" name="btnAgregar" value="Agregar nuevo" />
+            <input type="button" id="btnAgregar" class="btn btn-outline-info" name="btnAgregar" value="Agregar nuevo" />
         </div>
     </div>
     <div class="card-body">
@@ -36,8 +36,6 @@ $lstempleados = $oEmpleados->Listado();
                     <tr>
                         <th>Nombre</th>
                         <th>Fecha Ingreso</th>
-                        <th>Puesto</th>
-                        <th>Departamento</th>
                         <th>Estatus</th>
                         <th>Acciones</th>
                     </tr>
@@ -45,21 +43,17 @@ $lstempleados = $oEmpleados->Listado();
                 <tfoot>
                     <th>Nombre</th>
                     <th>Fecha Ingreso</th>
-                    <th>Puesto</th>
-                    <th>Departamento</th>
                     <th>Estatus</th>
                     <th>Acciones</th>
                 </tfoot>
                 <tbody>
                     <?php
-                    if (count($lstempleados) > 0) {
-                        foreach ($lstempleados as $idx => $campo) {
+                    if (count($lstclientes) > 0) {
+                        foreach ($lstclientes as $idx => $campo) {
                     ?>
                             <tr>
                                 <td style="text-align: center;"><?= ucwords(strtolower($campo->ape_paterno . " " . $campo->ape_materno . " " . $campo->nombres)) ?></td>
                                 <td style="text-align: center;"><?= $campo->fecha_ingreso ?></td>
-                                <td style="text-align: center;"><?= ucwords(strtolower($campo->puesto)) ?></td>
-                                <td style="text-align: center;"><?= ucwords(strtolower($campo->departamento)) ?></td>
                                 <td style="text-align: center;"><?= $campo->estatus ?></td>
                                 <td style="text-align: center;">
                                     <a class="btn btn-outline-sm btn-warning" href="javascript:Editar('<?= $campo->id ?>','Editar')">Editar</a>

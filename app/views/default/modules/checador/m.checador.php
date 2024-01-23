@@ -272,7 +272,7 @@ $_SITE_PATH = $_SERVER["DOCUMENT_ROOT"] . "/" . explode("/", $_SERVER["PHP_SELF"
         }
     </script>
 
-<body class="bg-gradient-danger" onload="mueveReloj()">
+<body class="bg-gradient-info" onload="mueveReloj()">
 
     <div class="container">
         <!-- Outer Row -->

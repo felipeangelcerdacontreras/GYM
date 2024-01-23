@@ -33,14 +33,14 @@ $lstasistencia = $oAsistencia->Listado_asistencia();
         $("#btnAgregar").button().click(function(e) {
             Editar("", "Agregar");
         });
-        $(".buttons-html5 ").addClass("btn btn-outline-danger");
+        $(".buttons-html5 ").addClass("btn btn-outline-info");
 
     });
 </script>
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
     <div class="card-header py-3" style="text-align:left">
-        <h5 class="m-0 font-weight-bold text-danger">Asistencia</h5>
+        <h5 class="m-0 font-weight-bold text-info">Asistencia</h5>
         <div class="form-group" style="text-align:right">
 
         </div>
@@ -50,7 +50,7 @@ $lstasistencia = $oAsistencia->Listado_asistencia();
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                     <tr>
-                        <th>Nombre Empleado</th>
+                        <th>Nombre Cliente</th>
                         <th>Fecha</th>
                         <th>Hora entrada</th>
                         <th>Hora salida</th>

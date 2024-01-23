@@ -4,21 +4,21 @@
  * felipeangelcerdacontreras@gmail.com
  */
 $_SITE_PATH = $_SERVER["DOCUMENT_ROOT"] . "/" . explode("/", $_SERVER["PHP_SELF"])[1] . "/";
-require_once($_SITE_PATH . "app/model/departamentos.class.php");
+require_once($_SITE_PATH . "app/model/clientes.class.php");
 
-$oDepartamentos = new departamentos();
-$sesion = $_SESSION[$oDepartamentos->NombreSesion];
-$oDepartamentos->ValidaNivelUsuario("departamentos");
+$oClientes = new clientes();
+$sesion = $_SESSION[$oClientes->NombreSesion];
+$oClientes->ValidaNivelUsuario("clientes");
 
 ?>
 <?php require_once('app/views/default/script_h.html'); ?>
 <script type="text/javascript">
     $(document).ready(function(e) {
         Listado();
+        
         $("#btnGuardar").button().click(function(e) {
             $(".form-control").css('border', '1px solid #d1d3e2');
             var frmTrue = true;
-
             $("#frmFormulario").find('select, input').each(function() {
                 var elemento = this;
                 if ($(elemento).hasClass("obligado")) {
@@ -46,7 +46,7 @@ $oDepartamentos->ValidaNivelUsuario("departamentos");
         $.ajax({
             data: jsonDatos,
             type: "POST",
-            url: "app/views/default/modules/catalogos/departamentos/m.departamentos.listado.php",
+            url: "app/views/default/modules/catalogos/clientes/m.clientes.listado.php",
             beforeSend: function() {
                 $("#divListado").html(
                     '<div class="container"><center><img src="app/views/default/img/loading.gif" border="0"/><br />Leyendo información de la Base de Datos, espere un momento por favor...</center></div>'
@@ -63,7 +63,7 @@ $oDepartamentos->ValidaNivelUsuario("departamentos");
             $.ajax({
                 data: "accion=Desactivar&id=" + id + "&estatus= 0",
                 type: "POST",
-                url: "app/views/default/modules/catalogos/departamentos/m.departamentos.procesa.php",
+                url: "app/views/default/modules/catalogos/clientes/m.clientes.procesa.php",
                 beforeSend: function() {
 
                 },
@@ -76,7 +76,7 @@ $oDepartamentos->ValidaNivelUsuario("departamentos");
             $.ajax({
                 data: "accion=Desactivar&id=" + id + "&estatus= 1",
                 type: "POST",
-                url: "app/views/default/modules/catalogos/departamentos/m.departamentos.procesa.php",
+                url: "app/views/default/modules/catalogos/clientes/m.clientes.procesa.php",
                 beforeSend: function() {
 
                 },
@@ -89,7 +89,7 @@ $oDepartamentos->ValidaNivelUsuario("departamentos");
             $.ajax({
                 data: "id=" + id + "&nombre=" + nombre,
                 type: "POST",
-                url: "app/views/default/modules/catalogos/departamentos/m.departamentos.formulario.php",
+                url: "app/views/default/modules/catalogos/clientes/m.clientes.formulario.php",
                 beforeSend: function() {
                     $("#divFormulario").html(
                         '<div class="container"><center><img src="app/views/default/img/loading.gif" border="0"/><br />Cargando formulario, espere un momento por favor...</center></div>'
@@ -100,7 +100,9 @@ $oDepartamentos->ValidaNivelUsuario("departamentos");
                 }
             });
             $("#myModal_1").modal({
-                backdrop: "true"
+                backdrop: "true",
+                backdrop: 'static',
+                keyboard: false
             });
         }
     }
@@ -110,7 +112,9 @@ $oDepartamentos->ValidaNivelUsuario("departamentos");
 
 <head>
     <?php require_once('app/views/default/head.html'); ?>
-    <title>Departamentos</title>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <title>clientes</title>
 </head>
 
 <body id="page-top">
@@ -134,8 +138,8 @@ $oDepartamentos->ValidaNivelUsuario("departamentos");
                 </div>
             </div>
             <!-- Logout Modal-->
-            <div class="modal fade" id="myModal_1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
+            <div class="modal fade bd-example-modal-lg" id="myModal_1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title" id="exampleModalLabel"><strong id="nameModal"></strong>
@@ -151,7 +155,7 @@ $oDepartamentos->ValidaNivelUsuario("departamentos");
                         </div>
                         <div class="modal-footer">
 
-                            <input type="submit" class="btn btn-outline-danger" id="btnGuardar" value="Guardar">
+                            <input type="submit" class="btn btn-outline-info" id="btnGuardar" value="Guardar">
                             <button class="btn btn-outline-secondary" type="button" data-dismiss="modal">Cancel</button>
                         </div>
                     </div>

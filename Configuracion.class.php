@@ -14,11 +14,11 @@ class Configuracion {
     protected $RutaAbsoluta;
 
 	public function __construct() {
-        $this->mysql_database = "renova";
+        $this->mysql_database = "gym";
         $this->mysql_host = "localhost";
         $this->mysql_user = "root";
         $this->mysql_pass = "";
-        $this->NombreSesion = "RENOVAMX";
+        $this->NombreSesion = "GYM";
         $this->MasterKey = "1234";
         $this->API_KEY = "AIzaSyDNuQjcMaL880tNTT_rY6X3G6DhiMqSDFw";
         $this->RutaAbsoluta = $_SERVER["DOCUMENT_ROOT"] . "/" . explode("/", $_SERVER["PHP_SELF"])[1] . "/";

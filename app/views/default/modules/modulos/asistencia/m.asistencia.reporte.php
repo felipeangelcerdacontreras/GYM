@@ -27,7 +27,7 @@ $lstasistencia = $oAsistencia->Listado_asistencia();
                 }
             }]
         });
-        $(".buttons-html5 ").addClass("btn btn-outline-danger");
+        $(".buttons-html5 ").addClass("btn btn-outline-info");
         $(".dt-buttons").attr("hidden", "hidden");
         $("#btn").button().click(function(e) {
             $(".buttons-pdf").trigger('click');

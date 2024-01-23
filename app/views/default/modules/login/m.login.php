@@ -108,7 +108,7 @@ $_SITE_PATH = $_SERVER["DOCUMENT_ROOT"] . "/" . explode("/", $_SERVER["PHP_SELF"
         }
     </script>
 
-<body class="bg-gradient-danger">
+<body class="bg-gradient-info">
 
     <div class="container">
 
