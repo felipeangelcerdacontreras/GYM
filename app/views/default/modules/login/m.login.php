@@ -142,14 +142,14 @@ $_SITE_PATH = $_SERVER["DOCUMENT_ROOT"] . "/" . explode("/", $_SERVER["PHP_SELF"
                                                     Me</label>
                                             </div>
                                         </div>
-                                        <input type="button" id="btnLogin" class="btn bg-gradient-danger btn-user btn-block" name="btnLogin" value="Login" style="color:#000;">
+                                        <input type="button" id="btnLogin" class="btn bg-gradient-info btn-user btn-block" name="btnLogin" value="Login" style="color:#000;">
                                     </form>
                                     <div class="form-group" style="">
                                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                     </div>
                                     <div class="row">
                                         <div class="col">
-                                            <a id="comedor" class="btn btn-outline-info text-left"><label> Comedor</label></a>
+                                            <a id="registro" class="btn btn-outline-info text-left"><label> Realizar Pago</label></a>
                                         </div>
                                         <div class="row">
                                             <a id="checador" class="btn btn-outline-info text-right "><label> Checador</label></a>
